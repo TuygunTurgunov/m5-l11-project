@@ -19,70 +19,14 @@ public class Main  {
     public static void main(String[] args) {
 
 
-
-
-//        Measurement measurement=new Measurement();
-//
-//
-//        Date date=new Date();
-//        System.out.println(date);
-//        LocalDate localDate=LocalDate.now();
-//        System.out.println(localDate);
-
-// Main main=new Main();
-//        int randomNumber = main.randomNumber();
-//        System.out.println();
-//        int randomNumber = randomNumber();
-//        System.out.println(randomNumber);
-
-
-List<Integer> list=new ArrayList<>();
-//list.add(2);
-//list.add(9);
-//if(list.size()==0){
-//    System.out.println(1);
-//    System.out.println(list.size());
-//
-//}else
-//    System.out.println(list.size()+1);
-
-//        Timestamp timestamp=Timestamp.valueOf(LocalDateTime.now());
-//        LocalDateTime localDateTime=LocalDateTime.now();
-//        System.out.println(timestamp);
-//        System.out.println(localDateTime);
-//        Date date=new Date();
-//        System.out.println(date.getTime());
-
-        UUID uuid=UUID.randomUUID();
-        String s=UUID.randomUUID().toString();
-        System.out.println(s);
+   Date date=new Date(1616764394420L);
+   System.out.println(date);
+   Date date1=new Date();
+   System.out.println(date1);
 
 
 
 
 
-
-
-
-
-
-int a=list.size()+1;
-//        System.out.println(list.get(list.size()-1));
-
-
-
-
-
-//randomNumber();
-
-    }
-    public static int randomNumber(){
-        int intRandom= ThreadLocalRandom.current().nextInt();
-        if (intRandom>0){
-            return intRandom;
-        }
-        else {
-            return  randomNumber();
-        }
     }
 }

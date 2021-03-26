@@ -30,5 +30,4 @@ public class InputProduct {
     @ManyToOne
     private Input input;
 
-
 }

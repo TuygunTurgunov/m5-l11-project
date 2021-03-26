@@ -35,5 +35,4 @@ public class Input {
 
     @Column(nullable = false, unique = true)
     private String code;
-
 }

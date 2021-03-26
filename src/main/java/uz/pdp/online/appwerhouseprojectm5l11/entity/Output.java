@@ -3,6 +3,7 @@ package uz.pdp.online.appwerhouseprojectm5l11.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -16,6 +17,8 @@ public class Output {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
+    @CreationTimestamp
     private Timestamp dateWithTime;
 
     @ManyToOne

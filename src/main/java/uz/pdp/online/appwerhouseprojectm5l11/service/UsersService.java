@@ -14,9 +14,7 @@ import uz.pdp.online.appwerhouseprojectm5l11.payload.UsersDto;
 import uz.pdp.online.appwerhouseprojectm5l11.repository.UsersRepository;
 import uz.pdp.online.appwerhouseprojectm5l11.repository.WarehouseRepository;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class UsersService {
@@ -36,10 +34,13 @@ public class UsersService {
         users.setLastName(usersDto.getLastName());
         users.setPhoneNumber(usersDto.getPhoneNumber());
         users.setPassword(usersDto.getPassword());
-        List<Warehouse> warehouseSet = warehouseRepository.findAllById(usersDto.getWarehouses());
-        users.setWarehouses(warehouseSet);
+        List<Warehouse> warehouse = warehouseRepository.findAllById(usersDto.getWarehouses());
+        users.setWarehouses(warehouse);
+        //        Set id=new HashSet(Arrays.asList(usersDto.getWarehouses()));
+        //        List<Warehouse> warehouseSet = warehouseRepository.findAllById(id);
+        //        users.setWarehouses(warehouseSet);
+
         usersRepository.save(users);
-        List<Warehouse> all = warehouseRepository.findAll();
         return new Result("User saved",true);
 
     }
@@ -74,8 +75,8 @@ public class UsersService {
             return new Result("This phone number already exists",false);
 
         Users users = optionalUsers.get();
-        List<Warehouse> warehouseSet = warehouseRepository.findAllById(usersDto.getWarehouses());
-        users.setWarehouses(warehouseSet);
+        List<Warehouse> warehouses = warehouseRepository.findAllById(usersDto.getWarehouses());
+        users.setWarehouses(warehouses);
         users.setCode(GenerateCode.setCode());
         users.setFirstName(usersDto.getFirstName());
         users.setLastName(usersDto.getLastName());
